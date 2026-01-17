@@ -58,7 +58,7 @@ ONTAP tools notifies you when the vCenter certificate is nearing expiration or h
 . Obtain the renewed vCenter certificate from the diagnostics shell:
 +
 ----
-echo | openssl s_client connect <vcenter>:443 2>&1 | sed -n '/-BEGIN CERTIFICATE/,/END CERTIFICATE/p' 
+echo | openssl s_client -connect <vcenter>:443 2>&1 | sed -n '/-BEGIN CERTIFICATE/,/END CERTIFICATE/p' 
 ----
 . Ensure the certificate is in Base 64 ASCII format and includes the beginning and ending lines, for example:
 +
